@@ -1,0 +1,176 @@
+{
+	"info": {
+		"_postman_id": "96c6e3dd-1940-4165-b2b0-d21631ba1807",
+		"name": "Transações Financeiras API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2009622"
+	},
+	"item": [
+		{
+			"name": "Criar uma transação",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": \"gabriel\",\n    \"amount\": 100,\n    \"description\": \"PIX para a empresa\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/dev/transactions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"dev",
+						"transactions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar uma transação Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": \"gabriel\",\n    \"amount\": 100,\n    \"description\": \"PIX para a empresa\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/dev/transactions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"dev",
+						"transactions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar transações de um usuário",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": \"gabriel\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/dev/user/gabriel/transactions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"dev",
+						"user",
+						"gabriel",
+						"transactions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar transações de um usuário Copy",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": \"gabriel\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/dev/user/gabriel/transactions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"dev",
+						"user",
+						"gabriel",
+						"transactions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar saldo no mês de referência",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": \"gabriel\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/dev/user/gabriel/balance?month=2025-03",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"dev",
+						"user",
+						"gabriel",
+						"balance"
+					],
+					"query": [
+						{
+							"key": "month",
+							"value": "2025-03"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

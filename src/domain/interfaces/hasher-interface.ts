@@ -1,0 +1,3 @@
+interface HasherInterface {
+  generateUuid: () => string
+}

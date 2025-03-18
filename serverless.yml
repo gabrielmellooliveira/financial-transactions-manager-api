@@ -1,0 +1,29 @@
+service: financial-transactions-manager-api
+frameworkVersion: '4.8.0'
+useDotenv: true
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: us-east-2
+functions:
+  createTransaction:
+    handler: src/main.createTransaction
+    events:
+      - http:
+          path: transactions
+          method: POST      
+  findTransactionsByUser:
+    handler: src/main.findTransactionsByUser
+    events:
+      - http:
+          path: user/{userId}/transactions
+          method: GET    
+  findAmountByMonth:
+    handler: src/main.findAmountByMonth
+    events:
+      - http:
+          path: user/{userId}/balance
+          method: GET 
+plugins:
+   - serverless-offline
+   - serverless-dotenv-plugin
